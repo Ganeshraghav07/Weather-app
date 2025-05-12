@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="icon" href="logo.png.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <h2>🌤 Weather App</h2>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="pages/today.html">Today</a></li>
+      <li><a href="pages/hourly.html">Hourly</a></li>
+      <li><a href="pages/aqi.html">AQI</a></li>
+      <li><a href="pages/monthly.html">15 Day</a></li>
+    </ul>
+  </nav>
+  <main>
+  <div class="search-container">
+    <h1>Check the Weather</h1>
+    <form id="searchForm">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <div id="resultArea">
+    <!-- Result of city Temprature -->
+  </div>
+</main>
+
+
+  <script src="js/index.js"></script>
+</body>
+</html>
