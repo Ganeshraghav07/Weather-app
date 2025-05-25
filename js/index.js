@@ -1,4 +1,4 @@
-const apiKey = "c350ab9eac2b4f5289881429251205";
+const apiKey = "b376483ccd681e040f9c573d3eae2f2f";
 
 function toPascalCase(str) {
   return str
@@ -23,7 +23,7 @@ document.getElementById("searchForm").addEventListener("submit", async function 
   const result = document.getElementById("resultArea");
 
   try {
-    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     console.log("Fetching weather for:", city);
     const res = await fetch(apiUrl);
 
