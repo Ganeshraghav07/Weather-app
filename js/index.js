@@ -17,7 +17,7 @@ document.getElementById("searchForm").addEventListener("submit", async function 
     return;
   }
 
-  const city = toPascalCase(cityInput); 
+  const city = toPascalCase(cityInput);
   localStorage.setItem("city", city);
 
   const result = document.getElementById("resultArea");
@@ -32,21 +32,21 @@ document.getElementById("searchForm").addEventListener("submit", async function 
     }
 
     const data = await res.json();
-    const current = data.current;
 
-   result.innerHTML = `
-  <div class="weather-card">
-    <h2>${data.location.name}</h2>
-    <img src="https:${current.condition.icon}" />
-    <p>${current.condition.text}</p>
-    <p>Temperature: ${current.temp_c}°C</p>
-    <p>Humidity: ${current.humidity}%</p>
-    <p>Wind: ${current.wind_kph} kph</p>
-  </div>
-`;
+    result.innerHTML = `
+      <div class="weather-card">
+        <h2>${data.name}, ${data.sys.country}</h2>
+        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="weather icon"/>
+        <p>${data.weather[0].description}</p>
+        <p>Temperature: ${data.main.temp}°C</p>
+        <p>Humidity: ${data.main.humidity}%</p>
+        <p>Wind: ${data.wind.speed} m/s</p>
+      </div>
+    `;
 
   } catch (err) {
     console.error("Error:", err);
     result.innerHTML = `<p style="color:red">City not found or invalid input!</p>`;
   }
 });
+
