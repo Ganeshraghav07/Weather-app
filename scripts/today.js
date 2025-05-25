@@ -1,5 +1,5 @@
 
-const apiKey = "c350ab9eac2b4f5289881429251205";
+const apiKey = "b376483ccd681e040f9c573d3eae2f2f";
 const city = localStorage.getItem("city");
 
 if (!city) {
